@@ -1,5 +1,5 @@
 #Informa a imagem base
-FROM node:latest
+FROM node:14.17.6
 #Informa o diretório padrão
 WORKDIR /
 #Variáveis de ambiente do dockerfile
