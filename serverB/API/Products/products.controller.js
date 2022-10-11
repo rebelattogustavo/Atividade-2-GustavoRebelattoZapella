@@ -8,13 +8,13 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-    const { Name, Quantity, Description } = req.body;
-    res.json(await productshandler.create(Name, Quantity, Description));
+    const { Name, Quantity, Description, User, Password } = req.body;
+    res.json(await productshandler.create(Name, Quantity, Description, User, Password));
 });
 
 router.put('/:id', async (req, res) =>{
-    const { Name, Quantity, Description } = req.body;
-    res.json(await productshandler.create(Name, Quantity, Description, req.params.id));
+    const { Name, Quantity, Description, User, Password } = req.body;
+    res.json(await productshandler.create(Name, Quantity, Description, User, Password, req.params.id));
 });
 
 router.delete('/:id', async (req, res) => {

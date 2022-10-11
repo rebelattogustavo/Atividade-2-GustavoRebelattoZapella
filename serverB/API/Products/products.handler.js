@@ -12,19 +12,18 @@ async function searchProductsId(Id) {
     return { "Error": "Product not found" };
 };
 
-async function create(Name, Quantity, Description, Id) {
-    if (Id) {
-        let product = await crud.getById('products', Id);
-        if (product.Name !== undefined) {
-            const product = await crud.save('products', Id, { Name, Quantity, Description });
-            return product;
-        } else {
-            return { "Error": "Product not found" };
+
+
+async function create(Name, Quantity, Description, User, Password, Id) {
+    fetch('http://localhost:3000/users/login', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'User': User,
+            'Password': Password
         }
-    } else {
-        const product = await crud.save('products', null, { Name, Quantity, Description });
-        return product;
-    }
+    }).then(response => {
+        if(response)
 };
 
 async function remove(Id) {

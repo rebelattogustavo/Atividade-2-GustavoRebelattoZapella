@@ -3,7 +3,7 @@ FROM node:14.17.6
 #Informa o diretório padrão
 WORKDIR /
 #Variáveis de ambiente do dockerfile
-ARG PORT=8080
+ARG PORT=8081
 #Variável de ambiente da aplicação
 ENV PORT=$PORT
 #Deixa a porta da máquina visivel para a aplicação
