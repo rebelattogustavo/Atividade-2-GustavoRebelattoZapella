@@ -20,17 +20,21 @@ async function create(name, description, price, userCPF, userPassword, Id) {
             body: JSON.stringify({ userCPF, userPassword })
         });
         user = await fetchUser.json();
-        if(Id){
+        if (Id) {
             const product = await crud.save('Products', Id, verifyUser(name, description, price, userCPF, userPassword));
             return product;
-        }else{
+        } else {
             const data2 = await verifyUser(name, description, price, userCPF, userPassword)
-            const product = await crud.save('Products', null, data2);
-            return product;
+            if (data2.Error) {
+                return data2;
+            } else {
+                const product = await crud.save('Products', null, data2);
+                return product;
+            }
         }
     } catch (err) {
         console.log(err);
-        return {"Error": "User not found"};
+        return { "Error": "User not found" };
     }
 };
 
@@ -50,7 +54,7 @@ async function verifyUser(name, description, price, userCPF, userPassword) {
             userCPF: userCPF
         };
         return data;
-    }else{
+    } else {
         return { "Error": "User not found" };
     }
 }
