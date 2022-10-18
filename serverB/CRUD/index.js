@@ -13,13 +13,12 @@ const {
 
 
 const firebaseConfig = initializeApp({
-    apiKey: "AIzaSyBWln3ZPK057mDXj-TzbVznpT1WDsZiyOI",
-    authDomain: "atividade-2-cloud.firebaseapp.com",
-    projectId: "atividade-2-cloud",
-    storageBucket: "atividade-2-cloud.appspot.com",
-    messagingSenderId: "703579778435",
-    appId: "1:703579778435:web:dcc8b40a5ced5a5d785ab6",
-    measurementId: "G-JDZMRQ2BGH"
+    apiKey: "AIzaSyCZfylZ6VRE17gNmFybNFyinaDk9hkLxw8",
+    authDomain: "learning-docker-6f896.firebaseapp.com",
+    projectId: "learning-docker-6f896",
+    storageBucket: "learning-docker-6f896.appspot.com",
+    messagingSenderId: "315634099939",
+    appId: "1:315634099939:web:4daa87e0aa1950c88f87d6"
   });
 
   const db = getFirestore();

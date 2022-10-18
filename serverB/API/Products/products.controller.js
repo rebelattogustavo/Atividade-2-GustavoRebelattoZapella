@@ -12,13 +12,13 @@ router.get('/:cpf', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-    const { Name, Quantity, Description, CPF, Password } = req.body;
-    res.json(await productsHandler.create(Name, Quantity, Description, CPF, Password));
+    const { name, description, price, userCPF, userPassword } = req.body;
+    res.json(await productsHandler.create(name, description, price, userCPF, userPassword));
 });
 
 router.put('/:id', async (req, res) =>{
-    const { Name, Quantity, Description, CPF, Password } = req.body;
-    res.json(await productsHandler.create(Name, Quantity, Description, CPF, Password, req.params.id));
+    const { name, description, price, userCPF, userPassword } = req.body;
+    res.json(await productsHandler.create(name, description, price, userCPF, userPassword, req.params.id));
 });
 
 router.delete('/:id', async (req, res) => {

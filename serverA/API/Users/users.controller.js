@@ -7,20 +7,19 @@ router.get('/', async (req, res) => {
     res.json(await usersHandler.searchUsers());
 });
 
-router.get('/login', async (req, res) =>{
-    const { User, Password } = req.body;
-    console.log(User, Password);
-    res.json(await usersHandler.login(User, Password))
+router.post('/login', async (req, res) =>{
+    const { CPF, Password } = req.body;
+    res.json(await usersHandler.login(CPF, Password))
 });
 
 router.post('/', async (req, res) => {
-    const { Name, CPF, User, Password } = req.body;
-    res.json(await usersHandler.create(Name, CPF, User, Password));
+    const { CPF, Name, Password } = req.body;
+    res.json(await usersHandler.create(CPF, Name, Password));
 });
 
 router.put('/:id', async (req, res) =>{
-    const { Name, CPF, User, Password } = req.body;
-    res.json(await usersHandler.create(Name, CPF, User, Password, req.params.id));
+    const { CPF, Name, Password } = req.body;
+    res.json(await usersHandler.create(CPF, Name, Password, req.params.id));
 });
 
 router.delete('/:id', async (req, res) => {

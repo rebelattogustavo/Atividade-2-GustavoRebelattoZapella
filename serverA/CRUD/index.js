@@ -12,14 +12,14 @@ const {
 } = require('firebase/firestore/lite');
 
 
-const firebaseConfig = {
+const firebaseConfig = initializeApp({
     apiKey: "AIzaSyCZfylZ6VRE17gNmFybNFyinaDk9hkLxw8",
     authDomain: "learning-docker-6f896.firebaseapp.com",
     projectId: "learning-docker-6f896",
     storageBucket: "learning-docker-6f896.appspot.com",
     messagingSenderId: "315634099939",
     appId: "1:315634099939:web:4daa87e0aa1950c88f87d6"
-};
+});
 
 
   const db = getFirestore();
